@@ -9,17 +9,23 @@ import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.dan.androidarchitercturewitharrowframework.R
 import com.dan.androidarchitercturewitharrowframework.store.presentation.util.components.LoadingDialog
 import com.dan.androidarchitercturewitharrowframework.store.presentation.util.components.MyTopAppBar
 
 @Composable
-internal fun ProductsScreen() {
+internal fun ProductsScreen(productViewModel: ProductsViewModel = hiltViewModel()) {
 
+    val state by productViewModel.state.collectAsStateWithLifecycle()
+    //val state by productViewModel.composeState
+    ProductsContent(productViewState = state)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
