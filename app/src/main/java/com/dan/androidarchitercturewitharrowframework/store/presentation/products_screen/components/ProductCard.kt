@@ -33,17 +33,17 @@ fun ProductCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
-        Column(modifier = Modifier.padding(15.dp)) {
+        Column(modifier = modifier.padding(15.dp)) {
             AsyncImage(
                 model = product.image,
                 contentDescription = null,
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxWidth()
                     .aspectRatio(1f),
                 contentScale = ContentScale.FillBounds
             )
 
-            Spacer(modifier = Modifier.height(5.dp))
+            Spacer(modifier = modifier.height(5.dp))
 
             Text(text = product.title, style = MaterialTheme.typography.titleMedium)
         }
