@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.dan.androidarchitercturewitharrowframework.R
+import com.dan.androidarchitercturewitharrowframework.store.presentation.products_screen.components.ProductCard
 import com.dan.androidarchitercturewitharrowframework.store.presentation.util.components.LoadingDialog
 import com.dan.androidarchitercturewitharrowframework.store.presentation.util.components.MyTopAppBar
 
@@ -40,13 +41,13 @@ fun ProductsContent(productViewState: ProductsViewState) {
         }
     ) {
         LazyVerticalStaggeredGrid(
-            modifier = Modifier.padding(it.calculateTopPadding()),
+            modifier = Modifier.padding(top = it.calculateTopPadding()),
             columns = StaggeredGridCells.Fixed(2),
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalItemSpacing = 10.dp
         ) {
             items(productViewState.products) { product ->
-
+                ProductCard(product = product)
 
             }
         }

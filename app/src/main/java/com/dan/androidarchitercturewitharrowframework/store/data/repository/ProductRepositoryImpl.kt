@@ -6,8 +6,11 @@ import com.dan.androidarchitercturewitharrowframework.store.data.remote.ProductA
 import com.dan.androidarchitercturewitharrowframework.store.domain.model.NetWorkError
 import com.dan.androidarchitercturewitharrowframework.store.domain.model.Product
 import com.dan.androidarchitercturewitharrowframework.store.domain.repository.ProductRepository
+import javax.inject.Inject
 
-class ProductRepositoryImpl(private val productApi: ProductApi) : ProductRepository {
+class ProductRepositoryImpl @Inject constructor(
+    private val productApi: ProductApi
+) : ProductRepository {
 
     override suspend fun getProducts(): Either<NetWorkError, List<Product>> {
         return Either.catch {

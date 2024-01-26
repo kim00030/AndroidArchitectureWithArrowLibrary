@@ -1,6 +1,5 @@
 package com.dan.androidarchitercturewitharrowframework.store.presentation.products_screen
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dan.androidarchitercturewitharrowframework.store.domain.repository.ProductRepository
@@ -23,6 +22,10 @@ class ProductsViewModel @Inject constructor(
 
 //    var composeState = mutableStateOf(ProductsViewState())
 //        private set
+
+    init {
+        getProducts()
+    }
 
     fun getProducts() {
         viewModelScope.launch {
