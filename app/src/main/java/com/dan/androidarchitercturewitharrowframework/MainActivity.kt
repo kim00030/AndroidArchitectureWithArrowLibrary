@@ -13,7 +13,7 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import com.dan.androidarchitercturewitharrowframework.store.presentation.products_screen.ProductsScreen
-import com.dan.androidarchitercturewitharrowframework.ui.theme.AndroidArchiterctureWithArrowFrameWorkTheme
+import com.dan.androidarchitercturewitharrowframework.ui.theme.AndroidArchitectureWithArrowFrameWorkTheme
 import com.dan.androidarchitercturewitharrowframework.util.Event
 import com.dan.androidarchitercturewitharrowframework.util.EventBus
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AndroidArchiterctureWithArrowFrameWorkTheme {
+            AndroidArchitectureWithArrowFrameWorkTheme {
 
                 val lifeCycle = LocalLifecycleOwner.current.lifecycle
                 LaunchedEffect(key1 = lifeCycle) {
