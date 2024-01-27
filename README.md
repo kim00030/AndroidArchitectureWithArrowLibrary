@@ -1,0 +1,3 @@
+Used:
+JekpackCompose
+Arrow framework
