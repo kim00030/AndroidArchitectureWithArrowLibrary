@@ -8,6 +8,10 @@ import com.dan.androidarchitercturewitharrowframework.store.domain.model.Product
 import com.dan.androidarchitercturewitharrowframework.store.domain.repository.ProductRepository
 import javax.inject.Inject
 
+/**
+ * Implementation of ProductRepository interface
+ * @see ProductRepository
+ */
 class ProductRepositoryImpl @Inject constructor(
     private val productApi: ProductApi
 ) : ProductRepository {

@@ -27,12 +27,14 @@ class ProductsViewModel @Inject constructor(
         getProducts()
     }
 
-    fun getProducts() {
+    private fun getProducts() {
         viewModelScope.launch {
+            //Loading state
             _state.update { productViewState ->
                 productViewState.copy(isLoading = true)
             }
 
+            //Getting products
             val result = productRepository.getProducts()
             //successful case
             result.onRight { products ->
@@ -45,6 +47,7 @@ class ProductsViewModel @Inject constructor(
                 _state.update { productsViewState ->
                     productsViewState.copy(isLoading = false, error = netWorkError.error.message)
                 }
+                //send to UI and let the UI shows Toast message
                 sendEvent(event = Event.Toast(message = netWorkError.error.message))
             }
         }
